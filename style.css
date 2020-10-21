@@ -1,0 +1,361 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/css?family=Cinzel|Lora|Open+Sans&display=swap);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fafafa;
+  color: #333;
+  font: normal normal normal 1.4em/2 'Open Sans','游ゴシック体',YuGothic,'游ゴシック Medium','Yu Gothic Medium','游ゴシック','Yu Gothic','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
+  letter-spacing: .1em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.pc {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sp {
+    display: block;
+  }
+}
+
+.header-3 {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  width: 100%;
+  height: 60px;
+  padding: 0 0.8em;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5%;
+  }
+}
+
+.header-nav-wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+  border: 1px solid #666;
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav-wrap {
+    margin: 0 0 5% 0;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav-item {
+    width: 100%;
+  }
+}
+
+.logo img {
+  width: 70px;
+}
+
+.header-button {
+  box-sizing: border-box;
+  padding: 0.5em 1.2em;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header-button {
+    width: 100%;
+  }
+}
+
+.header-login {
+  color: #000;
+}
+
+.header-new {
+  color: #000;
+}
+
+.header-post {
+  font-weight: bold;
+  color: #fff;
+  background: #666666;
+}
+
+/*　ハンバーガーボタン */
+.hamburger {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  right: 12px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 6px;
+  background: #555;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top: 16px;
+  left: 6px;
+  width: 24px;
+  background: #000;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  left: 60%;
+  opacity: 0;
+  -webkit-animation: active-btn17-bar02 .8s forwards;
+  animation: active-hamburger-bar02 .8s forwards;
+}
+
+@-webkit-keyframes active-hamburger-bar02 {
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes active-hamburger-bar02 {
+  100% {
+    height: 0;
+  }
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  width: 24px;
+  background: #000;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburger::after {
+  position: absolute;
+  top: 67%;
+  left: 67%;
+  display: block;
+  content: '';
+  width: 42px;
+  height: 42px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all .75s;
+}
+
+.hamburger.active::after {
+  border: 2px solid #000;
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 100%;
+  display: none;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+.g-nav-wrap {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .g-nav-wrap {
+    justify-content: center;
+    background: #fff;
+  }
+}
+
+nav.globalMenuSp ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: .4s all;
+}
+
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+
+nav.globalMenuSp ul li:hover {
+  background: #ddd;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #fff;
+  padding: 1em 0;
+  text-decoration: none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  display: block;
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrap-logo {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrap-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.footer-wrap-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrap-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.footer-txt {
+  padding: 0 1%;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-txt {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
